@@ -9,240 +9,80 @@
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet"/>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
-:root{
-  --green:#1a7a42;
-  --green-dark:#0e5c2f;
-  --green-light:#e8f5ee;
-  --green-mid:#2a9a55;
-  --black:#111;
-  --white:#fff;
-  --bg:#f7faf8;
-  --border:#d4e8db;
-  --muted:#5a7a65;
-  --shadow:0 4px 20px rgba(14,92,47,0.10);
-}
+:root{--green:#1a7a42;--green-dark:#0e5c2f;--green-light:#e8f5ee;--green-mid:#2a9a55;--black:#111;--white:#fff;--bg:#f7faf8;--border:#d4e8db;--muted:#5a7a65;}
 html{scroll-behavior:smooth;}
 body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--black);min-height:100vh;}
-
-/* ── HEADER ── */
-.header{
-  background:var(--white);
-  border-bottom:3px solid var(--green);
-  padding:0.8rem 1.5rem;
-  display:flex;align-items:center;justify-content:space-between;
-  position:sticky;top:0;z-index:100;
-  box-shadow:0 2px 12px rgba(26,122,66,0.09);
-}
+.header{background:var(--white);border-bottom:3px solid var(--green);padding:0.8rem 1.5rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(26,122,66,0.09);}
 .logo-area{display:flex;align-items:center;gap:10px;}
-.logo-circle{
-  width:48px;height:48px;border-radius:50%;
-  background:var(--white);border:2px solid var(--green);
-  display:flex;align-items:center;justify-content:center;flex-shrink:0;
-}
+.logo-circle{width:48px;height:48px;border-radius:50%;background:var(--white);border:2px solid var(--green);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
 .logo-svg{width:42px;height:42px;}
 .logo-text{line-height:1.15;}
 .logo-top{font-size:15px;font-weight:900;color:var(--green);display:block;}
 .logo-bottom{font-size:11px;font-weight:600;color:var(--black);display:block;}
-.cart-btn{
-  background:var(--green);color:var(--white);border:none;
-  border-radius:24px;padding:8px 16px;
-  font-family:'Nunito',sans-serif;font-size:13px;font-weight:800;
-  cursor:pointer;display:flex;align-items:center;gap:7px;white-space:nowrap;
-  transition:background 0.2s,transform 0.15s;
-}
-.cart-btn:hover{background:var(--green-dark);transform:translateY(-1px);}
-.cart-count{
-  background:var(--white);color:var(--green);
-  border-radius:50%;width:20px;height:20px;
-  display:flex;align-items:center;justify-content:center;
-  font-size:11px;font-weight:900;
-}
-
-/* ── HE RO ── */
-.hero{
-  background:linear-gradient(135deg,var(--green-dark) 0%,var(--green-mid) 100%);
-  color:var(--white);text-align:center;
-  padding:2.5rem 1.5rem 2rem;
-  border-bottom:4px solid var(--green-dark);
-  position:relative;overflow:hidden;
-}
-.hero::before{
-  content:'🐾';font-size:180px;opacity:0.06;
-  position:absolute;right:-20px;top:-20px;line-height:1;pointer-events:none;
-}
-.hero-logo{
-  width:80px;height:80px;border-radius:50%;
-  background:var(--white);border:3px solid rgba(255,255,255,0.4);
-  display:flex;align-items:center;justify-content:center;
-  margin:0 auto 1rem;
-  box-shadow:0 4px 20px rgba(0,0,0,0.2);
-}
+.cart-btn{background:var(--green);color:var(--white);border:none;border-radius:24px;padding:8px 16px;font-family:'Nunito',sans-serif;font-size:13px;font-weight:800;cursor:pointer;display:flex;align-items:center;gap:7px;white-space:nowrap;transition:background 0.2s;}
+.cart-btn:hover{background:var(--green-dark);}
+.cart-count{background:var(--white);color:var(--green);border-radius:50%;width:20px;height:20px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;}
+.hero{background:linear-gradient(135deg,var(--green-dark) 0%,var(--green-mid) 100%);color:var(--white);text-align:center;padding:2.5rem 1.5rem 2rem;border-bottom:4px solid var(--green-dark);position:relative;overflow:hidden;}
+.hero::before{content:'🐾';font-size:180px;opacity:0.06;position:absolute;right:-20px;top:-20px;line-height:1;pointer-events:none;}
+.hero-logo{width:80px;height:80px;border-radius:50%;background:var(--white);border:3px solid rgba(255,255,255,0.4);display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;box-shadow:0 4px 20px rgba(0,0,0,0.2);}
 .hero h1{font-size:clamp(20px,5vw,30px);font-weight:900;margin-bottom:0.3rem;}
 .hero p{font-size:13px;color:rgba(255,255,255,0.82);margin-bottom:0.8rem;}
-.hero-badge{
-  display:inline-block;
-  background:rgba(255,255,255,0.15);
-  border:1px solid rgba(255,255,255,0.3);
-  border-radius:20px;font-size:11px;font-weight:700;
-  padding:4px 14px;color:rgba(255,255,255,0.95);
-}
-
-/* ── FILTERS ── */
-.filters{
-  display:flex;gap:8px;padding:1rem 1.5rem 0.8rem;
-  flex-wrap:wrap;background:var(--white);
-  border-bottom:1px solid var(--border);
-  overflow-x:auto;
-}
-.filter-btn{
-  background:var(--white);border:1.5px solid var(--border);
-  border-radius:24px;padding:5px 14px;
-  font-size:12px;font-family:'Nunito',sans-serif;font-weight:700;
-  cursor:pointer;color:var(--muted);white-space:nowrap;transition:all 0.15s;
-}
+.hero-badge{display:inline-block;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);border-radius:20px;font-size:11px;font-weight:700;padding:4px 14px;color:rgba(255,255,255,0.95);}
+.filters{display:flex;gap:8px;padding:1rem 1.5rem 0.8rem;flex-wrap:wrap;background:var(--white);border-bottom:1px solid var(--border);overflow-x:auto;}
+.filter-btn{background:var(--white);border:1.5px solid var(--border);border-radius:24px;padding:5px 14px;font-size:12px;font-family:'Nunito',sans-serif;font-weight:700;cursor:pointer;color:var(--muted);white-space:nowrap;transition:all 0.15s;}
 .filter-btn.active,.filter-btn:hover{background:var(--green);border-color:var(--green);color:var(--white);}
-
-.section-title{
-  font-size:17px;font-weight:900;color:var(--black);
-  padding:1.2rem 1.5rem 0.4rem;
-  display:flex;align-items:center;gap:10px;
-}
+.section-title{font-size:17px;font-weight:900;color:var(--black);padding:1.2rem 1.5rem 0.4rem;display:flex;align-items:center;gap:10px;}
 .section-title::after{content:'';flex:1;height:2px;background:var(--border);border-radius:2px;}
-
-/* ── GRID ── */
-.products-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
-  gap:14px;padding:0.5rem 1.5rem 3rem;
-}
-@media(max-width:520px){
-  .products-grid{grid-template-columns:repeat(2,1fr);gap:10px;padding:0.5rem 0.8rem 3rem;}
-  .filters{padding:0.8rem 0.8rem 0.6rem;}
-  .section-title{padding:1rem 0.8rem 0.3rem;}
-  .header{padding:0.7rem 0.8rem;}
-}
-
-/* ── CARD ── */
-.product-card{
-  background:var(--white);border-radius:16px;
-  border:1.5px solid var(--border);
-  overflow:hidden;display:flex;flex-direction:column;
-  transition:transform 0.2s,box-shadow 0.2s;
-}
+.products-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;padding:0.5rem 1.5rem 3rem;}
+@media(max-width:520px){.products-grid{grid-template-columns:repeat(2,1fr);gap:10px;padding:0.5rem 0.8rem 3rem;}.filters{padding:0.8rem;}.section-title{padding:1rem 0.8rem 0.3rem;}.header{padding:0.7rem 0.8rem;}}
+.product-card{background:var(--white);border-radius:16px;border:1.5px solid var(--border);overflow:hidden;display:flex;flex-direction:column;transition:transform 0.2s,box-shadow 0.2s;}
 .product-card:hover{transform:translateY(-4px);box-shadow:0 10px 28px rgba(26,122,66,0.14);}
-.product-img{
-  width:100%;aspect-ratio:1;
-  display:flex;align-items:center;justify-content:center;
-  font-size:clamp(38px,10vw,54px);
-  background:var(--green-light);position:relative;
-}
-.tag-promo{
-  position:absolute;top:8px;right:8px;
-  background:#e8a020;color:#fff;
-  font-size:9px;font-weight:800;border-radius:6px;padding:3px 7px;
-}
-.tag-cat{
-  position:absolute;bottom:8px;left:8px;
-  background:rgba(14,92,47,0.82);color:#fff;
-  font-size:9px;font-weight:700;border-radius:6px;padding:2px 8px;
-  text-transform:capitalize;
-}
+.product-img{width:100%;aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-size:clamp(38px,10vw,54px);background:var(--green-light);position:relative;}
+.tag-promo{position:absolute;top:8px;right:8px;background:#e8a020;color:#fff;font-size:9px;font-weight:800;border-radius:6px;padding:3px 7px;}
+.tag-cat{position:absolute;bottom:8px;left:8px;background:rgba(14,92,47,0.82);color:#fff;font-size:9px;font-weight:700;border-radius:6px;padding:2px 8px;text-transform:capitalize;}
 .product-info{padding:10px 12px 12px;flex:1;display:flex;flex-direction:column;gap:6px;}
 .product-name{font-size:13px;font-weight:800;color:var(--black);line-height:1.3;}
 .product-price{font-size:15px;font-weight:900;color:var(--green-dark);}
 .product-price-note{font-size:10px;color:var(--muted);font-weight:600;line-height:1.4;}
-.promo-tag{
-  font-size:9px;background:#fff8e6;color:#8a5c00;
-  border-radius:5px;padding:2px 7px;font-weight:700;
-  border:1px solid #f0d080;
-}
-
-/* ── SELECTORS ── */
+.promo-tag{font-size:9px;background:#fff8e6;color:#8a5c00;border-radius:5px;padding:2px 7px;font-weight:700;border:1px solid #f0d080;}
 .selector-label{font-size:10px;font-weight:800;color:#333;margin-bottom:3px;text-transform:uppercase;letter-spacing:0.3px;}
 .size-options{display:flex;gap:4px;flex-wrap:wrap;}
-.size-btn{
-  min-width:30px;padding:3px 7px;
-  border:1.5px solid var(--border);border-radius:7px;
-  font-size:10px;font-weight:700;font-family:'Nunito',sans-serif;
-  cursor:pointer;background:var(--white);color:#444;transition:all 0.15s;
-}
+.size-btn{min-width:30px;padding:3px 7px;border:1.5px solid var(--border);border-radius:7px;font-size:10px;font-weight:700;font-family:'Nunito',sans-serif;cursor:pointer;background:var(--white);color:#444;transition:all 0.15s;}
 .size-btn:hover{border-color:var(--green);color:var(--green);}
 .size-btn.selected{background:var(--green);border-color:var(--green);color:var(--white);}
-
 .color-options{display:flex;gap:5px;flex-wrap:wrap;}
-.color-dot{
-  width:22px;height:22px;border-radius:50%;cursor:pointer;
-  border:2.5px solid transparent;transition:transform 0.15s,border-color 0.15s;
-}
+.color-dot{width:22px;height:22px;border-radius:50%;cursor:pointer;border:2.5px solid transparent;transition:transform 0.15s;}
 .color-dot:hover{transform:scale(1.15);}
 .color-dot.selected{border-color:var(--green-dark);transform:scale(1.15);}
 .color-dot.is-white{border-color:#bbb;}
-
 .surtido-note{font-size:10px;color:var(--green);font-weight:700;}
-
 .qty-row{display:flex;align-items:center;justify-content:space-between;margin-top:4px;}
 .qty-ctrl{display:flex;align-items:center;gap:7px;}
-.qty-btn{
-  width:26px;height:26px;border-radius:8px;
-  border:1.5px solid var(--border);background:var(--green-light);
-  cursor:pointer;font-size:15px;font-weight:800;
-  display:flex;align-items:center;justify-content:center;
-  color:var(--green-dark);transition:background 0.15s;
-}
+.qty-btn{width:26px;height:26px;border-radius:8px;border:1.5px solid var(--border);background:var(--green-light);cursor:pointer;font-size:15px;font-weight:800;display:flex;align-items:center;justify-content:center;color:var(--green-dark);}
 .qty-btn:hover{background:#c5e5d3;}
 .qty-num{font-size:14px;font-weight:900;min-width:18px;text-align:center;}
-.add-btn{
-  flex:1;background:var(--green);color:var(--white);border:none;
-  border-radius:9px;padding:8px 10px;
-  font-family:'Nunito',sans-serif;font-size:11px;font-weight:800;
-  cursor:pointer;transition:background 0.2s;
-  display:flex;align-items:center;justify-content:center;gap:5px;
-  margin-left:9px;
-}
+.add-btn{flex:1;background:var(--green);color:var(--white);border:none;border-radius:9px;padding:8px 10px;font-family:'Nunito',sans-serif;font-size:11px;font-weight:800;cursor:pointer;transition:background 0.2s;display:flex;align-items:center;justify-content:center;gap:5px;margin-left:9px;}
 .add-btn:hover{background:var(--green-dark);}
 .selector-required{font-size:10px;color:#cc2222;display:none;font-weight:700;}
 .selector-required.show{display:block;}
-
-/* ── CART PANEL ── */
-.cart-panel{
-  position:fixed;top:0;right:0;
-  width:min(360px,100vw);height:100vh;
-  background:var(--white);border-left:2px solid var(--border);
-  z-index:200;display:flex;flex-direction:column;
-  transform:translateX(100%);transition:transform 0.3s ease;
-  box-shadow:-6px 0 24px rgba(0,0,0,0.1);
-}
+.cart-panel{position:fixed;top:0;right:0;width:min(370px,100vw);height:100vh;background:var(--white);border-left:2px solid var(--border);z-index:200;display:flex;flex-direction:column;transform:translateX(100%);transition:transform 0.3s ease;box-shadow:-6px 0 24px rgba(0,0,0,0.1);}
 .cart-panel.open{transform:translateX(0);}
-.cart-header{
-  background:var(--green-dark);color:var(--white);
-  padding:1rem 1.4rem;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;
-}
+.cart-header{background:var(--green-dark);padding:1rem 1.4rem;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;}
 .cart-header h2{font-size:17px;font-weight:900;color:var(--white);}
 .close-btn{background:none;border:none;color:rgba(255,255,255,0.7);font-size:20px;cursor:pointer;padding:0;}
 .close-btn:hover{color:var(--white);}
-
 .cart-steps{display:flex;border-bottom:2px solid var(--border);flex-shrink:0;}
-.step-tab{
-  flex:1;padding:10px 6px;text-align:center;
-  font-size:12px;font-weight:800;color:#999;
-  cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px;
-}
+.step-tab{flex:1;padding:10px 6px;text-align:center;font-size:12px;font-weight:800;color:#999;cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px;}
 .step-tab.active{color:var(--green);border-bottom-color:var(--green);}
 .step-tab.done{color:var(--green);}
-.step-num{
-  width:19px;height:19px;border-radius:50%;
-  background:#e5e5e5;color:#999;font-size:10px;font-weight:900;
-  display:inline-flex;align-items:center;justify-content:center;margin-right:3px;
-}
+.step-num{width:19px;height:19px;border-radius:50%;background:#e5e5e5;color:#999;font-size:10px;font-weight:900;display:inline-flex;align-items:center;justify-content:center;margin-right:3px;}
 .step-tab.active .step-num,.step-tab.done .step-num{background:var(--green);color:var(--white);}
-
 .cart-body{flex:1;overflow-y:auto;}
 .panel-content{display:none;}
 .panel-content.active{display:block;}
 .cart-items-section{padding:1rem 1.4rem;}
 .cart-empty{text-align:center;color:#aaa;padding:2.5rem 1rem;font-size:14px;font-weight:600;}
 .cart-empty-icon{font-size:44px;margin-bottom:0.8rem;}
-
 .cart-item{display:flex;align-items:flex-start;gap:10px;padding:10px 0;border-bottom:1px solid var(--border);}
 .cart-item-emoji{font-size:24px;min-width:30px;text-align:center;margin-top:2px;}
 .cart-item-info{flex:1;min-width:0;}
@@ -251,96 +91,57 @@ body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--black);min
 .vcdot{width:11px;height:11px;border-radius:50%;border:1px solid #ccc;display:inline-block;flex-shrink:0;}
 .cart-item-price{font-size:11px;color:var(--muted);font-weight:600;}
 .cart-item-controls{display:flex;align-items:center;gap:6px;margin-top:5px;}
-.ci-qty-btn{
-  width:23px;height:23px;border-radius:6px;
-  border:1.5px solid var(--border);background:var(--green-light);
-  cursor:pointer;font-size:13px;font-weight:800;
-  display:flex;align-items:center;justify-content:center;color:var(--green-dark);
-}
+.ci-qty-btn{width:23px;height:23px;border-radius:6px;border:1.5px solid var(--border);background:var(--green-light);cursor:pointer;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;color:var(--green-dark);}
 .ci-qty-btn:hover{background:#c5e5d3;}
 .ci-qty-num{font-size:12px;font-weight:900;min-width:15px;text-align:center;}
 .ci-delete{background:none;border:none;color:#ccc;cursor:pointer;font-size:15px;margin-left:4px;padding:0;}
 .ci-delete:hover{color:#cc2222;}
 .cart-subtotal{display:flex;justify-content:space-between;font-size:13px;font-weight:800;padding:12px 0 0;margin-top:4px;}
-
-/* ── FORM ── */
 .form-section{padding:1rem 1.4rem;}
 .form-section h3{font-size:15px;font-weight:900;margin-bottom:3px;}
 .form-section p{font-size:12px;color:#888;margin-bottom:1rem;font-weight:600;}
-.form-field{margin-bottom:13px;}
-.form-field label{display:block;font-size:12px;font-weight:700;color:#333;margin-bottom:4px;}
-.form-field input{
-  width:100%;border:1.5px solid var(--border);border-radius:9px;
-  padding:9px 12px;font-size:14px;font-family:'Nunito',sans-serif;font-weight:600;
-  color:var(--black);background:var(--white);outline:none;transition:border-color 0.2s;
-}
-.form-field input:focus{border-color:var(--green);}
-.form-field input.error{border-color:#cc2222;}
+.form-field{margin-bottom:12px;}
+.form-field label{display:block;font-size:11px;font-weight:700;color:#333;margin-bottom:4px;}
+.form-field input,.form-field select{width:100%;border:1.5px solid var(--border);border-radius:9px;padding:9px 12px;font-size:13px;font-family:'Nunito',sans-serif;font-weight:600;color:var(--black);background:var(--white);outline:none;transition:border-color 0.2s;appearance:none;-webkit-appearance:none;}
+.form-field input:focus,.form-field select:focus{border-color:var(--green);}
+.form-field input.error,.form-field select.error{border-color:#cc2222;}
 .field-error{font-size:11px;color:#cc2222;margin-top:3px;display:none;font-weight:700;}
 .field-error.show{display:block;}
-
-/* ── FOOTER ── */
+.select-wrapper{position:relative;}
+.select-wrapper::after{content:'▾';position:absolute;right:12px;top:50%;transform:translateY(-50%);color:var(--muted);pointer-events:none;font-size:14px;}
+.envio-box{background:var(--green-light);border:1.5px solid var(--border);border-radius:10px;padding:11px 13px;margin-bottom:12px;display:none;}
+.envio-box.show{display:block;}
+.envio-box-title{font-size:12px;font-weight:900;color:var(--green-dark);margin-bottom:5px;}
+.envio-box-detail{font-size:11px;color:var(--muted);font-weight:600;line-height:1.6;}
+.envio-box-price{font-size:16px;font-weight:900;color:var(--green-dark);margin-top:5px;}
 .cart-footer{padding:1rem 1.4rem 1.4rem;border-top:2px solid var(--border);flex-shrink:0;}
-.cart-total{display:flex;justify-content:space-between;font-weight:800;font-size:15px;color:var(--black);margin-bottom:12px;}
-.cart-total span:last-child{font-size:20px;font-weight:900;color:var(--green-dark);}
-.next-btn,.whatsapp-btn,.back-btn{
-  width:100%;border-radius:12px;padding:12px;
-  font-family:'Nunito',sans-serif;font-size:14px;font-weight:900;
-  cursor:pointer;display:flex;align-items:center;justify-content:center;
-  gap:8px;transition:all 0.2s;border:none;
-}
+.totals-box{background:var(--bg);border-radius:10px;padding:10px 12px;margin-bottom:10px;}
+.total-row{display:flex;justify-content:space-between;font-size:12px;font-weight:700;color:var(--muted);margin-bottom:5px;}
+.total-row.envio{color:var(--green-dark);}
+.total-row.final{font-size:15px;font-weight:900;color:var(--black);border-top:1.5px solid var(--border);padding-top:8px;margin-top:4px;margin-bottom:0;}
+.total-row.final span:last-child{color:var(--green-dark);font-size:19px;}
+.next-btn,.whatsapp-btn,.back-btn{width:100%;border-radius:12px;padding:12px;font-family:'Nunito',sans-serif;font-size:14px;font-weight:900;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;transition:all 0.2s;border:none;}
 .next-btn{background:var(--green);color:var(--white);}
 .next-btn:hover{background:var(--green-dark);}
 .next-btn:disabled{background:#ccc;cursor:not-allowed;}
 .whatsapp-btn{background:#25D366;color:var(--white);}
 .whatsapp-btn:hover{background:#1db954;}
+.whatsapp-btn:disabled{background:#b5e8c8;cursor:not-allowed;}
 .back-btn{background:var(--white);color:var(--muted);border:1.5px solid var(--border);margin-top:8px;padding:9px;}
 .back-btn:hover{background:var(--green-light);}
 .wa-note{font-size:11px;color:#999;text-align:center;margin-top:8px;line-height:1.4;font-weight:600;}
-
 .overlay{position:fixed;inset:0;background:rgba(0,0,0,0.42);z-index:150;display:none;}
 .overlay.show{display:block;}
-
-/* ── FOOTER DEL SITIO ── */
-.site-footer{
-  background:var(--green-dark);color:rgba(255,255,255,0.8);
-  text-align:center;padding:1.5rem;font-size:12px;font-weight:600;
-}
+.site-footer{background:var(--green-dark);color:rgba(255,255,255,0.8);text-align:center;padding:1.5rem;font-size:12px;font-weight:600;}
 .site-footer a{color:rgba(255,255,255,0.9);text-decoration:none;}
 </style>
 </head>
 <body>
 
-<div id="shop">
-  <!-- HEADER -->
-  <header class="header">
-    <div class="logo-area">
-      <div class="logo-circle">
-        <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-          <ellipse cx="35" cy="28" rx="9" ry="12" fill="#1a7a42"/>
-          <ellipse cx="50" cy="22" rx="9" ry="12" fill="#1a7a42"/>
-          <ellipse cx="65" cy="28" rx="9" ry="12" fill="#1a7a42"/>
-          <ellipse cx="50" cy="55" rx="20" ry="18" fill="#1a7a42"/>
-          <ellipse cx="46" cy="52" rx="8" ry="10" fill="white" opacity="0.9"/>
-          <circle cx="46" cy="44" r="6" fill="white" opacity="0.9"/>
-          <ellipse cx="41" cy="41" rx="3" ry="5" fill="#1a7a42" transform="rotate(-20 41 41)"/>
-          <ellipse cx="51" cy="41" rx="3" ry="5" fill="#1a7a42" transform="rotate(20 51 41)"/>
-        </svg>
-      </div>
-      <div class="logo-text">
-        <span class="logo-top">La Casa</span>
-        <span class="logo-bottom">de las Mascotas</span>
-      </div>
-    </div>
-    <button class="cart-btn" onclick="toggleCart()">
-      🛒 Mi pedido <span class="cart-count" id="cart-count">0</span>
-    </button>
-  </header>
-
-  <!-- HERO -->
-  <div class="hero">
-    <div class="hero-logo">
-      <svg width="56" height="56" viewBox="0 0 100 100">
+<header class="header">
+  <div class="logo-area">
+    <div class="logo-circle">
+      <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
         <ellipse cx="35" cy="28" rx="9" ry="12" fill="#1a7a42"/>
         <ellipse cx="50" cy="22" rx="9" ry="12" fill="#1a7a42"/>
         <ellipse cx="65" cy="28" rx="9" ry="12" fill="#1a7a42"/>
@@ -351,35 +152,54 @@ body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--black);min
         <ellipse cx="51" cy="41" rx="3" ry="5" fill="#1a7a42" transform="rotate(20 51 41)"/>
       </svg>
     </div>
-    <h1>Catálogo Mayorista 2025 🐾</h1>
-    <p>Indumentaria para mascotas · Elegí talles, colores y cantidad</p>
-    <span class="hero-badge">📦 Pedidos por WhatsApp · Venta por curva o talles a elección</span>
+    <div class="logo-text">
+      <span class="logo-top">La Casa</span>
+      <span class="logo-bottom">de las Mascotas</span>
+    </div>
   </div>
+  <button class="cart-btn" onclick="toggleCart()">🛒 Mi pedido <span class="cart-count" id="cart-count">0</span></button>
+</header>
 
-  <!-- FILTROS -->
-  <div class="filters">
-    <button class="filter-btn active" onclick="filterProducts('todos',this)">Todos</button>
-    <button class="filter-btn" onclick="filterProducts('chaleco',this)">Chalecos</button>
-    <button class="filter-btn" onclick="filterProducts('buzo',this)">Buzos</button>
-    <button class="filter-btn" onclick="filterProducts('campera',this)">Camperas</button>
-    <button class="filter-btn" onclick="filterProducts('polar',this)">Poleras/Capitas</button>
-    <button class="filter-btn" onclick="filterProducts('remera',this)">Remeras</button>
-    <button class="filter-btn" onclick="filterProducts('lluvia',this)">Lluvia</button>
-    <button class="filter-btn" onclick="filterProducts('disfraz',this)">Disfraces</button>
+<div class="hero">
+  <div class="hero-logo">
+    <svg width="56" height="56" viewBox="0 0 100 100">
+      <ellipse cx="35" cy="28" rx="9" ry="12" fill="#1a7a42"/>
+      <ellipse cx="50" cy="22" rx="9" ry="12" fill="#1a7a42"/>
+      <ellipse cx="65" cy="28" rx="9" ry="12" fill="#1a7a42"/>
+      <ellipse cx="50" cy="55" rx="20" ry="18" fill="#1a7a42"/>
+      <ellipse cx="46" cy="52" rx="8" ry="10" fill="white" opacity="0.9"/>
+      <circle cx="46" cy="44" r="6" fill="white" opacity="0.9"/>
+      <ellipse cx="41" cy="41" rx="3" ry="5" fill="#1a7a42" transform="rotate(-20 41 41)"/>
+      <ellipse cx="51" cy="41" rx="3" ry="5" fill="#1a7a42" transform="rotate(20 51 41)"/>
+    </svg>
   </div>
-
-  <div class="section-title">Catálogo</div>
-  <div class="products-grid" id="products-grid"></div>
-
-  <footer class="site-footer">
-    🐾 La Casa de las Mascotas — <a href="https://wa.me/5491157264650">WhatsApp: +54 9 11 5726-4650</a> · @lacasadelasmascotas.ok
-  </footer>
+  <h1>Catálogo Mayorista 2025 🐾</h1>
+  <p>Indumentaria para mascotas · Elegí talles, colores y cantidad</p>
+  <span class="hero-badge">📦 Envío a todo el país por Correo Argentino</span>
 </div>
 
-<!-- OVERLAY -->
+<div class="filters">
+  <button class="filter-btn active" onclick="filterProducts('todos',this)">Todos</button>
+  <button class="filter-btn" onclick="filterProducts('chaleco',this)">Chalecos</button>
+  <button class="filter-btn" onclick="filterProducts('buzo',this)">Buzos</button>
+  <button class="filter-btn" onclick="filterProducts('campera',this)">Camperas</button>
+  <button class="filter-btn" onclick="filterProducts('polar',this)">Poleras/Capitas</button>
+  <button class="filter-btn" onclick="filterProducts('remera',this)">Remeras</button>
+  <button class="filter-btn" onclick="filterProducts('lluvia',this)">Lluvia</button>
+  <button class="filter-btn" onclick="filterProducts('disfraz',this)">Disfraces</button>
+</div>
+
+<div class="section-title">Catálogo</div>
+<div class="products-grid" id="products-grid"></div>
+
+<footer class="site-footer">
+  🐾 La Casa de las Mascotas &nbsp;·&nbsp;
+  <a href="https://wa.me/5491157264650">WhatsApp: +54 9 11 5726-4650</a> &nbsp;·&nbsp;
+  @lacasadelasmascotas.ok
+</footer>
+
 <div class="overlay" id="overlay" onclick="toggleCart()"></div>
 
-<!-- CART PANEL -->
 <div class="cart-panel" id="cart-panel">
   <div class="cart-header">
     <h2>🛒 Tu pedido</h2>
@@ -398,7 +218,7 @@ body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--black);min
     <div class="panel-content" id="step-2">
       <div class="form-section">
         <h3>¿Quién hace el pedido?</h3>
-        <p>Completá tus datos para que podamos contactarte.</p>
+        <p>Completá todos tus datos para coordinar el envío.</p>
         <div class="form-field">
           <label>Nombre completo *</label>
           <input type="text" id="f-nombre" placeholder="Ej: María López"/>
@@ -414,29 +234,76 @@ body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--black);min
           <input type="tel" id="f-telefono" placeholder="Ej: 11 1234-5678"/>
           <div class="field-error" id="err-telefono">Ingresá tu teléfono</div>
         </div>
+        <div class="form-field">
+          <label>Provincia *</label>
+          <div class="select-wrapper">
+            <select id="f-provincia" onchange="onProvinciaChange()">
+              <option value="">-- Seleccioná tu provincia --</option>
+              <option value="bsas">Buenos Aires</option>
+              <option value="bsas">Ciudad Autónoma de Buenos Aires</option>
+              <option value="otra">Catamarca</option>
+              <option value="otra">Chaco</option>
+              <option value="otra">Chubut</option>
+              <option value="otra">Córdoba</option>
+              <option value="otra">Corrientes</option>
+              <option value="otra">Entre Ríos</option>
+              <option value="otra">Formosa</option>
+              <option value="otra">Jujuy</option>
+              <option value="otra">La Pampa</option>
+              <option value="otra">La Rioja</option>
+              <option value="otra">Mendoza</option>
+              <option value="otra">Misiones</option>
+              <option value="otra">Neuquén</option>
+              <option value="otra">Río Negro</option>
+              <option value="otra">Salta</option>
+              <option value="otra">San Juan</option>
+              <option value="otra">San Luis</option>
+              <option value="otra">Santa Cruz</option>
+              <option value="otra">Santa Fe</option>
+              <option value="otra">Santiago del Estero</option>
+              <option value="otra">Tierra del Fuego</option>
+              <option value="otra">Tucumán</option>
+            </select>
+          </div>
+          <div class="field-error" id="err-provincia">Seleccioná tu provincia</div>
+        </div>
+        <div class="form-field">
+          <label>Código postal *</label>
+          <input type="text" id="f-cp" placeholder="Ej: 1414" maxlength="8" oninput="onCpChange()"/>
+          <div class="field-error" id="err-cp">Ingresá tu código postal</div>
+        </div>
+        <div class="envio-box" id="envio-box">
+          <div class="envio-box-title">📦 Envío — Correo Argentino</div>
+          <div class="envio-box-detail" id="envio-detail"></div>
+          <div class="envio-box-price" id="envio-price"></div>
+        </div>
       </div>
     </div>
   </div>
   <div class="cart-footer">
-    <div class="cart-total"><span>Total estimado</span><span id="cart-total">$0</span></div>
+    <div class="totals-box">
+      <div class="total-row"><span>Subtotal productos</span><span id="tot-productos">$0</span></div>
+      <div class="total-row envio" id="tot-envio-row" style="display:none"><span id="tot-envio-label">Envío</span><span id="tot-envio">$0</span></div>
+      <div class="total-row final"><span>Total</span><span id="cart-total">$0</span></div>
+    </div>
     <div id="footer-1">
-      <button class="next-btn" id="next-btn" onclick="goToStep2()" disabled>
-        Continuar con mis datos →
-      </button>
+      <button class="next-btn" id="next-btn" onclick="goToStep2()" disabled>Continuar con mis datos →</button>
     </div>
     <div id="footer-2" style="display:none">
-      <button class="whatsapp-btn" onclick="sendToWhatsApp()">
+      <button class="whatsapp-btn" id="wa-btn" onclick="sendToWhatsApp()">
         <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.527 5.847L0 24l6.318-1.527A11.956 11.956 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0m0 21.818a9.818 9.818 0 01-5.006-1.372l-.36-.214-3.728.979.999-3.637-.235-.374A9.818 9.818 0 1112 21.818"/></svg>
         Enviar pedido por WhatsApp
       </button>
       <button class="back-btn" onclick="goToStep1()">← Volver a los productos</button>
     </div>
-    <div class="wa-note">Confirmamos disponibilidad y coordinamos el envío por WhatsApp.</div>
+    <div class="wa-note">El envío es a la sucursal de Correo Argentino de tu localidad. Confirmamos por WhatsApp.</div>
   </div>
 </div>
 
 <script>
 const WA='5491157264650';
+const ENVIO_BSAS=8000;
+const ENVIO_OTRA=12000;
 
 const products=[
   {id:1,name:'Chaleco impermeable',emoji:'🦺',cat:'chaleco',sizes:['T.0','T.1','T.2','T.3','T.4','T.5','T.6','T.7'],colors:[],multiColor:true,price:19187,priceNote:'Curva surtida $153.500 (T.0 al T.7)',promo:'También elegís talles y colores'},
@@ -447,7 +314,7 @@ const products=[
   {id:6,name:'Polar soft premium lisos',emoji:'🧶',cat:'buzo',sizes:['T.0','T.1','T.2','T.3','T.4','T.5','T.6','T.7'],colors:[{hex:'#555',name:'Gris'},{hex:'#e8b4c0',name:'Rosa'},{hex:'#c8a064',name:'Marrón'},{hex:'#b4c8e8',name:'Celeste'},{hex:'#a0c8a0',name:'Verde'},{hex:'#e8c8a0',name:'Beige'},{hex:'#c8a0c8',name:'Lila'}],price:11375,priceNote:'Curva surtida $91.000 (T.0 al T.7)',promo:'También elegís talles y colores'},
   {id:7,name:'Buzo Argentina',emoji:'🇦🇷',cat:'buzo',sizes:['T.1','T.2','T.3','T.4','T.5','T.6','T.7','T.8','T.9','T.10'],colors:[{hex:'#b8d4f8',name:'Celeste Argentina'}],price:85000,priceNote:'Curva 1-6: $85.000 · Curva 7-10: $95.000',promo:'Consultar precios a partir de 4 curvas'},
   {id:8,name:'Buzito premium polar con peluche',emoji:'🐰',cat:'buzo',sizes:['M','L','XL'],colors:[{hex:'#d4b8f8',name:'Lila'},{hex:'#a8d4a8',name:'Verde'},{hex:'#f8e0b8',name:'Crema'},{hex:'#f8b8d4',name:'Rosa'},{hex:'#b8d4f8',name:'Celeste'}],price:6000,priceNote:'$6.000 c/u',promo:'¡Llevá 5 y te regalamos 1!'},
-  {id:9,name:'Buzo importado corderito con osito',emoji:'🧸',cat:'buzo',sizes:['S','M','L','XL'],colors:[{hex:'#d4b8f8',name:'Lila'},{hex:'#111',name:'Negro'},{hex:'#2c5cb8',name:'Azul'}],price:16500,priceNote:'$16.500 c/u (S-M-L-XL con velcro)',promo:'¡Llevá 5 y te regalamos 1!'},
+  {id:9,name:'Buzo importado corderito con osito',emoji:'🧸',cat:'buzo',sizes:['S','M','L','XL'],colors:[{hex:'#d4b8f8',name:'Lila'},{hex:'#111',name:'Negro'},{hex:'#2c5cb8',name:'Azul'}],price:16500,priceNote:'$16.500 c/u',promo:'¡Llevá 5 y te regalamos 1!'},
   {id:10,name:'Buzos de plush baby',emoji:'🍼',cat:'buzo',sizes:['S','M','L'],colors:[{hex:'#b8d4e8',name:'Celeste'},{hex:'#f8e8d0',name:'Crema'},{hex:'#e8d4b8',name:'Beige'}],price:36000,priceNote:'Curva $36.000',promo:null},
   {id:11,name:'Polar soft estampados',emoji:'🌺',cat:'buzo',sizes:['T.0','T.1','T.2','T.3','T.4','T.5','T.6','T.7'],colors:[],multiColor:true,price:91000,priceNote:'Curva surtida $91.000 (T.0 al T.7)',promo:null},
   {id:12,name:'Buzo corderito importado con aplique',emoji:'🐻',cat:'buzo',sizes:['M','L','XL','XXL'],colors:[{hex:'#b8d4f8',name:'Celeste'},{hex:'#a8d4a8',name:'Verde'},{hex:'#d4b8f8',name:'Lila'}],price:11250,priceNote:'$11.250 c/u',promo:null},
@@ -458,54 +325,77 @@ const products=[
   {id:17,name:'Buzos frizados Adidog',emoji:'🐾',cat:'buzo',sizes:['S','M','L','XL'],colors:[{hex:'#2c5cb8',name:'Azul'},{hex:'#c0392b',name:'Rosa fucsia'},{hex:'#888',name:'Gris'},{hex:'#111',name:'Negro'},{hex:'#f8d4c8',name:'Rosa bebé'}],price:11250,priceNote:'$11.250 c/u',promo:null},
   {id:18,name:'Campera forrada con abrigo',emoji:'🧥',cat:'campera',sizes:['M','L','XL'],colors:[{hex:'#c8a064',name:'Marrón camel'},{hex:'#2c4a7a',name:'Azul marino'}],price:18000,priceNote:'$18.000 c/u',promo:'¡Llevá 5 y te regalamos 1!'},
   {id:19,name:'Campera impermeable',emoji:'🌨️',cat:'campera',sizes:['XS','S','M','L'],colors:[],multiColor:true,price:105000,priceNote:'Curva surtida XS-L $105.000',promo:null},
-  {id:20,name:'Campera estampada con botones (frisa)',emoji:'🖼️',cat:'campera',sizes:['24cm','26cm','28cm','31cm','35cm','38cm','43cm'],colors:[],multiColor:true,price:64000,priceNote:'Curva T.1 al T.7 $64.000',promo:null},
-  {id:21,name:'Campera de jean unisex',emoji:'👖',cat:'campera',sizes:['T.1','T.2','T.3','T.4','T.5','T.6'],colors:[{hex:'#5a7ab8',name:'Jean azul'}],price:10500,priceNote:'T.1: $10.500 · T.2: $12.750 · T.3: $14.240 · T.4: $16.500 · T.5: $18.750 · T.6: $21.750',promo:null},
+  {id:20,name:'Campera estampada con botones',emoji:'🖼️',cat:'campera',sizes:['24cm','26cm','28cm','31cm','35cm','38cm','43cm'],colors:[],multiColor:true,price:64000,priceNote:'Curva T.1 al T.7 $64.000',promo:null},
+  {id:21,name:'Campera de jean unisex',emoji:'👖',cat:'campera',sizes:['T.1','T.2','T.3','T.4','T.5','T.6'],colors:[{hex:'#5a7ab8',name:'Jean azul'}],price:10500,priceNote:'T.1:$10.500 · T.2:$12.750 · T.3:$14.240 · T.4:$16.500 · T.5:$18.750 · T.6:$21.750',promo:null},
   {id:22,name:'Parka',emoji:'🏔️',cat:'campera',sizes:['M','L','XL','XXL'],colors:[{hex:'#f5f0e8',name:'Beige'},{hex:'#4a6741',name:'Verde militar'},{hex:'#2c4a7a',name:'Azul marino'}],price:27000,priceNote:'$27.000 c/u',promo:null},
   {id:23,name:'Polera polar lisa',emoji:'👕',cat:'polar',sizes:['T.1','T.2','T.3','T.4','T.5','T.6','T.7','T.8','T.9','T.10','T.11','T.12'],colors:[],multiColor:true,price:40000,priceNote:'Curva surtida $40.000 (12 prendas)',promo:null},
   {id:24,name:'Capitas polar fantasía',emoji:'🎨',cat:'polar',sizes:['T.0','T.1','T.2','T.3','T.4','T.5','T.6','T.7','T.8','T.9','T.10','T.11','T.12'],colors:[],multiColor:true,price:49500,priceNote:'Curva 0-12: $49.500 · Curva 0-6: $18.500 · Curva 7-12: $30.900',promo:null},
   {id:25,name:'Capitas polar ARG',emoji:'🇦🇷',cat:'polar',sizes:['T.1','T.2','T.3','T.4','T.5','T.6','T.7','T.8','T.9','T.10','T.11','T.12'],colors:[{hex:'#b8d4f8',name:'Celeste Argentina'}],price:62500,priceNote:'Curva 1-12: $62.500',promo:null},
-  {id:26,name:'Remeritas morley lisas',emoji:'👚',cat:'remera',sizes:['T.1','T.2','T.3','T.4','T.5'],colors:[],multiColor:true,price:4500,priceNote:'T.1: $4.500 · T.2: $5.250 · T.3: $6.000 · T.4: $6.750 · T.5: $7.500',promo:null},
-  {id:27,name:'Remeritas morley estampadas',emoji:'🐯',cat:'remera',sizes:['T.1','T.2','T.3','T.4','T.5'],colors:[],multiColor:true,price:6750,priceNote:'T.1: $6.750 · T.2: $7.500 · T.3: $8.400 · T.4: $9.750 · T.5: $11.250',promo:null},
+  {id:26,name:'Remeritas morley lisas',emoji:'👚',cat:'remera',sizes:['T.1','T.2','T.3','T.4','T.5'],colors:[],multiColor:true,price:4500,priceNote:'T.1:$4.500 · T.2:$5.250 · T.3:$6.000 · T.4:$6.750 · T.5:$7.500',promo:null},
+  {id:27,name:'Remeritas morley estampadas',emoji:'🐯',cat:'remera',sizes:['T.1','T.2','T.3','T.4','T.5'],colors:[],multiColor:true,price:6750,priceNote:'T.1:$6.750 · T.2:$7.500 · T.3:$8.400 · T.4:$9.750 · T.5:$11.250',promo:null},
   {id:28,name:'Pilotos de lluvia con pasador para correa',emoji:'🌧️',cat:'lluvia',sizes:['S','M','L','XL'],colors:[{hex:'#f8b8d4',name:'Rosa'},{hex:'#f8e040',name:'Amarillo'},{hex:'#4ab8f8',name:'Azul'},{hex:'#111',name:'Negro'},{hex:'#e84040',name:'Rojo'}],price:9750,priceNote:'$9.750 a partir de 4 unidades',promo:null},
   {id:29,name:'Disfraces abrigo polar soft',emoji:'🎭',cat:'disfraz',sizes:['M','L','XL'],colors:[],multiColor:true,price:17000,priceNote:'Curva $70.000 · A partir de 3 surtidos: $17.000',promo:'¡Llevá 5 y te regalamos 1!'},
   {id:30,name:'Jardineros',emoji:'👗',cat:'campera',sizes:['S','M','L','XL'],colors:[{hex:'#c0392b',name:'Rojo'},{hex:'#a8d4a8',name:'Menta'},{hex:'#4ab8f8',name:'Azul'}],price:8250,priceNote:'$8.300 c/u · Curva: $33.000',promo:null},
 ];
 
-let selections={},cart=[],cartId=0,currentFilter='todos';
+let selections={},cart=[],cartId=0,currentFilter='todos',costoEnvio=0;
 const fp=n=>'$'+Math.round(n).toLocaleString('es-AR');
 const gch=c=>typeof c==='object'?c.hex:c;
 const gcn=c=>typeof c==='object'?c.name:c;
+
+function getProvinciaLabel(){const s=document.getElementById('f-provincia');return s.options[s.selectedIndex]?s.options[s.selectedIndex].text:'';}
+function onProvinciaChange(){actualizarEnvio();}
+function onCpChange(){actualizarEnvio();}
+
+function actualizarEnvio(){
+  const provEl=document.getElementById('f-provincia');
+  const cpVal=document.getElementById('f-cp').value.trim();
+  const box=document.getElementById('envio-box');
+  const envioRow=document.getElementById('tot-envio-row');
+  if(!provEl.value){box.classList.remove('show');costoEnvio=0;envioRow.style.display='none';actualizarTotales();return;}
+  const esBsAs=provEl.value==='bsas';
+  costoEnvio=esBsAs?ENVIO_BSAS:ENVIO_OTRA;
+  const pTexto=getProvinciaLabel();
+  box.classList.add('show');
+  document.getElementById('envio-detail').innerHTML=`Provincia: <strong>${pTexto}</strong>${cpVal?' &nbsp;·&nbsp; CP: <strong>'+cpVal+'</strong>':''}<br>Envío a la <strong>sucursal de Correo Argentino</strong> de tu localidad.`;
+  document.getElementById('envio-price').textContent=fp(costoEnvio);
+  envioRow.style.display='flex';
+  document.getElementById('tot-envio-label').textContent=`📦 Envío (${esBsAs?'Bs. As.':'Interior'})`;
+  document.getElementById('tot-envio').textContent=fp(costoEnvio);
+  actualizarTotales();
+  updateWaBtn();
+}
+
+function actualizarTotales(){
+  const sub=cart.reduce((s,i)=>s+i.price*i.qty,0);
+  document.getElementById('tot-productos').textContent=fp(sub);
+  document.getElementById('cart-total').textContent=fp(sub+costoEnvio);
+}
+
+function updateWaBtn(){
+  const b=document.getElementById('wa-btn');
+  if(!b)return;
+  b.disabled=!document.getElementById('f-provincia').value||!document.getElementById('f-cp').value.trim();
+}
 
 function renderProducts(){
   const grid=document.getElementById('products-grid');
   const list=currentFilter==='todos'?products:products.filter(p=>p.cat===currentFilter);
   grid.innerHTML=list.map(p=>{
     const sel=selections[p.id]||{};
-    const hasColors=p.colors&&p.colors.length>0;
+    const hc=p.colors&&p.colors.length>0;
     return `<div class="product-card">
-      <div class="product-img">${p.emoji}
-        ${p.promo?'<div class="tag-promo">🎁 Promo</div>':''}
-        <div class="tag-cat">${p.cat}</div>
-      </div>
+      <div class="product-img">${p.emoji}${p.promo?'<div class="tag-promo">🎁 Promo</div>':''}<div class="tag-cat">${p.cat}</div></div>
       <div class="product-info">
         <div class="product-name">${p.name}</div>
         <div class="product-price">${fp(p.price)}</div>
         <div class="product-price-note">${p.priceNote}</div>
         ${p.promo?`<div class="promo-tag">🎁 ${p.promo}</div>`:''}
-        <div>
-          <div class="selector-label">Talle</div>
-          <div class="size-options">${p.sizes.map(s=>`<button class="size-btn${sel.size===s?' selected':''}" onclick="selectSize(${p.id},'${s}')">${s}</button>`).join('')}</div>
-        </div>
-        ${hasColors?`<div>
-          <div class="selector-label">Color</div>
-          <div class="color-options">${p.colors.map(c=>{
-            const hex=gch(c),name=gcn(c);
-            const isW=hex==='#fff'||hex==='#ffffff'||hex==='#f5f0e8';
-            return `<div class="color-dot${isW?' is-white':''}${sel.color===hex?' selected':''}" style="background:${hex}" title="${name}" onclick="selectColor(${p.id},'${hex}','${name}')"></div>`;
-          }).join('')}</div>
-        </div>`:(p.multiColor?'<div class="surtido-note">🎨 Colores surtidos</div>':'')}
+        <div><div class="selector-label">Talle</div>
+        <div class="size-options">${p.sizes.map(s=>`<button class="size-btn${sel.size===s?' selected':''}" onclick="selectSize(${p.id},'${s}')">${s}</button>`).join('')}</div></div>
+        ${hc?`<div><div class="selector-label">Color</div><div class="color-options">${p.colors.map(c=>{const h=gch(c),n=gcn(c);const iw=h==='#fff'||h==='#ffffff'||h==='#f5f0e8';return `<div class="color-dot${iw?' is-white':''}${sel.color===h?' selected':''}" style="background:${h}" title="${n}" onclick="selectColor(${p.id},'${h}','${n}')"></div>`;}).join('')}</div></div>`:(p.multiColor?'<div class="surtido-note">🎨 Colores surtidos</div>':'')}
         <div class="selector-required${sel.tried&&!sel.size?' show':''}">⚠ Elegí un talle</div>
-        ${hasColors?`<div class="selector-required${sel.tried&&!sel.color?' show':''}">⚠ Elegí un color</div>`:''}
+        ${hc?`<div class="selector-required${sel.tried&&!sel.color?' show':''}">⚠ Elegí un color</div>`:''}
         <div class="qty-row">
           <div class="qty-ctrl">
             <button class="qty-btn" onclick="changeQty(${p.id},-1)">−</button>
@@ -520,7 +410,7 @@ function renderProducts(){
 }
 
 function selectSize(pid,s){if(!selections[pid])selections[pid]={qty:1};selections[pid].size=s;renderProducts();}
-function selectColor(pid,hex,name){if(!selections[pid])selections[pid]={qty:1};selections[pid].color=hex;selections[pid].colorName=name;renderProducts();}
+function selectColor(pid,h,n){if(!selections[pid])selections[pid]={qty:1};selections[pid].color=h;selections[pid].colorName=n;renderProducts();}
 function changeQty(pid,d){if(!selections[pid])selections[pid]={qty:1};selections[pid].qty=Math.max(1,(selections[pid].qty||1)+d);renderProducts();}
 
 function addToCart(pid){
@@ -528,11 +418,9 @@ function addToCart(pid){
   if(!selections[pid])selections[pid]={qty:1};
   selections[pid].tried=true;
   const sel=selections[pid];
-  const hasColors=p.colors&&p.colors.length>0;
-  if(!sel.size||(hasColors&&!sel.color)){renderProducts();return;}
-  const colorLabel=hasColors?sel.colorName:(p.multiColor?'Surtido':'Único');
-  const colorHex=hasColors?sel.color:'#888';
-  cart.push({cartId:cartId++,pid:p.id,name:p.name,emoji:p.emoji,price:p.price,color:colorHex,colorName:colorLabel,size:sel.size,qty:sel.qty||1});
+  const hc=p.colors&&p.colors.length>0;
+  if(!sel.size||(hc&&!sel.color)){renderProducts();return;}
+  cart.push({cartId:cartId++,pid:p.id,name:p.name,emoji:p.emoji,price:p.price,color:hc?sel.color:'#888',colorName:hc?sel.colorName:(p.multiColor?'Surtido':'Único'),size:sel.size,qty:sel.qty||1});
   selections[pid]={qty:1};
   renderCart();renderProducts();
   if(!document.getElementById('cart-panel').classList.contains('open'))setTimeout(()=>toggleCart(),150);
@@ -546,41 +434,37 @@ function renderCart(){
   document.getElementById('cart-count').textContent=count;
   const container=document.getElementById('cart-items-list');
   const nextBtn=document.getElementById('next-btn');
-  if(!cart.length){
-    container.innerHTML='<div class="cart-empty"><div class="cart-empty-icon">🛍️</div>Todavía no agregaste productos.</div>';
-    nextBtn.disabled=true;document.getElementById('cart-total').textContent='$0';return;
-  }
-  let total=0;
-  let html=cart.map(item=>{
-    const sub=item.price*item.qty;total+=sub;
-    return `<div class="cart-item">
-      <div class="cart-item-emoji">${item.emoji}</div>
-      <div class="cart-item-info">
-        <div class="cart-item-name">${item.name}</div>
-        <div class="cart-item-variant"><span class="vcdot" style="background:${item.color}"></span>${item.colorName} · Talle ${item.size}</div>
-        <div class="cart-item-price">${fp(item.price)} c/u · ${fp(sub)}</div>
-        <div class="cart-item-controls">
-          <button class="ci-qty-btn" onclick="changeCartQty(${item.cartId},-1)">−</button>
-          <span class="ci-qty-num">${item.qty}</span>
-          <button class="ci-qty-btn" onclick="changeCartQty(${item.cartId},1)">+</button>
-          <button class="ci-delete" onclick="removeFromCart(${item.cartId})">🗑</button>
-        </div>
+  if(!cart.length){container.innerHTML='<div class="cart-empty"><div class="cart-empty-icon">🛍️</div>Todavía no agregaste productos.</div>';nextBtn.disabled=true;actualizarTotales();return;}
+  let html=cart.map(item=>`<div class="cart-item">
+    <div class="cart-item-emoji">${item.emoji}</div>
+    <div class="cart-item-info">
+      <div class="cart-item-name">${item.name}</div>
+      <div class="cart-item-variant"><span class="vcdot" style="background:${item.color}"></span>${item.colorName} · Talle ${item.size}</div>
+      <div class="cart-item-price">${fp(item.price)} c/u · ${fp(item.price*item.qty)}</div>
+      <div class="cart-item-controls">
+        <button class="ci-qty-btn" onclick="changeCartQty(${item.cartId},-1)">−</button>
+        <span class="ci-qty-num">${item.qty}</span>
+        <button class="ci-qty-btn" onclick="changeCartQty(${item.cartId},1)">+</button>
+        <button class="ci-delete" onclick="removeFromCart(${item.cartId})">🗑</button>
       </div>
-    </div>`;
-  }).join('');
-  html+=`<div class="cart-subtotal"><span>Subtotal</span><span>${fp(total)}</span></div>`;
+    </div>
+  </div>`).join('');
+  const sub=cart.reduce((s,i)=>s+i.price*i.qty,0);
+  html+=`<div class="cart-subtotal"><span>Subtotal</span><span>${fp(sub)}</span></div>`;
   container.innerHTML=html;
-  document.getElementById('cart-total').textContent=fp(total);
   nextBtn.disabled=false;
+  actualizarTotales();
 }
 
 function filterProducts(cat,btn){currentFilter=cat;document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');renderProducts();}
 function toggleCart(){document.getElementById('cart-panel').classList.toggle('open');document.getElementById('overlay').classList.toggle('show');}
+
 function goToStep2(){
   document.getElementById('step-1').classList.remove('active');document.getElementById('step-2').classList.add('active');
   document.getElementById('footer-1').style.display='none';document.getElementById('footer-2').style.display='block';
   document.getElementById('tab-1').classList.remove('active');document.getElementById('tab-1').classList.add('done');
   document.getElementById('tab-2').classList.add('active');
+  updateWaBtn();
 }
 function goToStep1(){
   document.getElementById('step-2').classList.remove('active');document.getElementById('step-1').classList.add('active');
@@ -588,27 +472,38 @@ function goToStep1(){
   document.getElementById('tab-2').classList.remove('active');document.getElementById('tab-1').classList.remove('done');
   document.getElementById('tab-1').classList.add('active');
 }
+
 function validate(){
   let ok=true;
   [['f-nombre','err-nombre'],['f-tienda','err-tienda'],['f-telefono','err-telefono']].forEach(([f,e])=>{
-    const inp=document.getElementById(f);const err=document.getElementById(e);
-    if(!inp.value.trim()){inp.classList.add('error');err.classList.add('show');ok=false;}
-    else{inp.classList.remove('error');err.classList.remove('show');}
+    const i=document.getElementById(f),er=document.getElementById(e);
+    if(!i.value.trim()){i.classList.add('error');er.classList.add('show');ok=false;}
+    else{i.classList.remove('error');er.classList.remove('show');}
   });
+  const prov=document.getElementById('f-provincia'),errP=document.getElementById('err-provincia');
+  if(!prov.value){prov.classList.add('error');errP.classList.add('show');ok=false;}else{prov.classList.remove('error');errP.classList.remove('show');}
+  const cp=document.getElementById('f-cp'),errC=document.getElementById('err-cp');
+  if(!cp.value.trim()){cp.classList.add('error');errC.classList.add('show');ok=false;}else{cp.classList.remove('error');errC.classList.remove('show');}
   return ok;
 }
+
 function sendToWhatsApp(){
   if(!validate()||!cart.length)return;
   const nombre=document.getElementById('f-nombre').value.trim();
   const tienda=document.getElementById('f-tienda').value.trim();
   const telefono=document.getElementById('f-telefono').value.trim();
-  let total=0,lineas='';
-  cart.forEach(item=>{const sub=item.price*item.qty;total+=sub;lineas+=`${item.emoji} *${item.name}* | Color: ${item.colorName} | Talle: ${item.size} | Cant: ${item.qty} — ${fp(sub)}%0A`;});
-  const msg=`¡Hola! Quiero hacer un pedido mayorista 🐾%0A%0A👤 *Nombre:* ${nombre}%0A🏪 *Tienda:* ${tienda}%0A📞 *Teléfono:* ${telefono}%0A%0A📦 *Detalle del pedido:*%0A${lineas}%0A💰 *Total estimado: ${fp(total)}*%0A%0A¿Pueden confirmar disponibilidad? ¡Gracias!`;
+  const provincia=getProvinciaLabel();
+  const cp=document.getElementById('f-cp').value.trim();
+  const sub=cart.reduce((s,i)=>s+i.price*i.qty,0);
+  const total=sub+costoEnvio;
+  let lineas='';
+  cart.forEach(item=>{lineas+=`${item.emoji} *${item.name}* | Color: ${item.colorName} | Talle: ${item.size} | Cant: ${item.qty} — ${fp(item.price*item.qty)}%0A`;});
+  const msg=`¡Hola! Quiero hacer un pedido mayorista 🐾%0A%0A👤 *Nombre:* ${nombre}%0A🏪 *Tienda:* ${tienda}%0A📞 *Teléfono:* ${telefono}%0A📍 *Provincia:* ${provincia}%0A📮 *Código postal:* ${cp}%0A%0A📦 *Detalle del pedido:*%0A${lineas}%0A💰 *Subtotal productos: ${fp(sub)}*%0A🚚 *Envío Correo Argentino (sucursal): ${fp(costoEnvio)}*%0A✅ *TOTAL: ${fp(total)}*%0A%0A¿Pueden confirmar disponibilidad? ¡Gracias!`;
   window.open(`https://wa.me/${WA}?text=${msg}`,'_blank');
 }
 
-renderProducts();renderCart();
+renderProducts();
+renderCart();
 </script>
 </body>
 </html>
